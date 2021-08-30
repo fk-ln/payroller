@@ -10,16 +10,16 @@ parser.add_argument('--other', help='勤務日に固定で入る残業手当・�
 wage = int(parser.parse_args().wage)
 
 if parser.parse_args().name != None:
-    other = parser.parse_args().name
+    name = parser.parse_args().name
 else:
-    other = 0
+    name = 0
 
 if parser.parse_args().other != None:
     other = int(parser.parse_args().other)
 else:
     other = 0
 
-f = open('sample.ics', 'r', encoding='utf-8')
+f = open(name+'.ics', 'r', encoding='utf-8')
 cal = Calendar.from_ical(f.read())
 
 sum = 0  # total salary
